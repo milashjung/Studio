@@ -1,0 +1,106 @@
+{% extends 'site/photobase.html' %}
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <style media="screen">
+      .btn-grad {
+        background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
+      .btn-grad {
+         margin: 10px;
+         width: 180px;
+         height: fit-content;
+         padding: 15px 20px;
+         text-align: center;
+         text-transform: uppercase;
+         transition: 0.5s;
+         background-size: 200% auto;
+         color: white;            
+         box-shadow: 0 0 20px rgb(0, 0, 0);
+         border-radius: 5px;
+         display: block;
+       }
+  
+       .btn-grad:hover {
+         background-position: right center; /* change the direction of the change here */
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+       }
+      a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+       
+    </style>
+  </head>
+<center>
+<br><br>
+    <div style="font-family: 'Segoe UI;">
+<h1  style="font-family: 'Segoe UI; ">Add Photography Details</h1>
+<div class="form-group">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+{{form.as_p}}
+<br><br/>
+<button class="btn-grad btn-grad hover"  type="submit" class="btn btn-secondary">submit</button>
+</form>
+</div>
+</div>
+{% endblock  %}
+</center>

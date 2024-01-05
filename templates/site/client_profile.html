@@ -1,0 +1,49 @@
+{% extends 'site/clientbase.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<meta charset="utf-8">
+<title></title>
+
+<style type="text/css">
+.card{
+    margin: auto;
+}
+</style>
+<body>
+<br><br><br><br><br>
+ <h1 style="color:; margin-left: 400px;"> Profile </h1> <br>
+
+    
+        <div class="container">
+            <div class="col" style="margin-left: 200px;">
+        
+
+                <p> <h5> First Name : {{ user.first_name }} </h5> </p>
+                <p> <h5> Last Name : {{ user.last_name }} </h5> </p>
+                <p> <h5> User Name : {{ user.username }} </h5> </p>
+                <p> <h5> Email-Id : {{ user.email }} </h5> </p>
+                <p> <h5> Password : {{ user.password }} </h5> </p>
+                <p> <h5> Last Login : {{ user.last_login }} </h5> </p>
+                <p> <h5> Is Superuser : {{ user.is_superuser }} </h5> </p>
+                <p> <h5> Is Staff : {{ user.is_staff }} </h5> </p>
+                <p> <h5> Is Active : {{ user.is_active }} </h5> </p>
+                <p> <h5> Date Joined : {{ user.date_joined }} </h5> </p>
+
+                <br> <a button href="{% url 'edit_client_profile' %}" class="btn btn-success"><span>Edit</span> </a>
+            </div>
+        </div>
+    
+
+</body>
+</html>
+
+{% endblock %}
+
+

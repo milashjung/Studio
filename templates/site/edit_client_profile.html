@@ -1,0 +1,130 @@
+{% extends 'site/clientbase.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<style type="text/css">
+.card{
+    margin: auto;
+}
+a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: #053740;
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #053740;
+      color: #fff;
+    }
+</style>
+<body>
+<br><br><br><br><br>
+<center> <h1 style="color:;"> Edit Profile </h1> </center><br>
+
+    <div class="card" style="width: 80%;height: auto;background-color:;">
+        
+            <div class="col-sm-6" style="margin:auto;">
+                
+                
+                <div class="form-group">
+                <form method="POST">
+                {% csrf_token %} <br>
+                {{ form.media }}
+                {{ form.as_p }}
+                <center>
+                <button type="Submit" class="btn btn-success">Edit</button>
+                </center>
+                </form>
+                </div>
+            </div>
+        
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

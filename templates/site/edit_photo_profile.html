@@ -1,0 +1,42 @@
+{% extends 'site/photobase.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<style type="text/css">
+.card{
+    margin: auto;
+}
+</style>
+<body>
+<br><br><br><br><br>
+<center> <h1 style="color:;"> Edit Profile </h1> </center><br>
+
+    <div class="card" style="width: 80%;height: auto;background-color:;">
+        
+            <div class="col-sm-6" style="margin:auto;">
+                
+                
+                <div class="form-group">
+                <form method="POST">
+                {% csrf_token %} <br>
+                {{ form.media }}
+                {{ form.as_p }}
+                <center>
+                <button type="Submit" class="btn btn-success">Edit</button>
+                </center>
+                </form>
+                </div>
+            </div>
+        
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

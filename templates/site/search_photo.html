@@ -1,0 +1,137 @@
+{% extends 'site/clientbase.html' %} 
+
+{% block content %} 
+<style>
+
+a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+    
+
+ 
+
+.card-container {
+	  -webkit-perspective: 800px;
+   -moz-perspective: 800px;
+     -o-perspective: 800px;
+        perspective: 800px;
+        margin-bottom: 30px;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+     -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #053740;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+</style>
+<br>
+    <center>
+   
+    {% if searched %} 
+        <h1>You Searched For {{searched}} </h1>
+        <p>click the card to view more details</p>
+        <br>
+         <div class="col-md-4 col-sm-6">
+             <div class="card-container">
+                <div class="card "> <!--bg-dark text-white-->
+                    <div class="front">
+                   
+                       
+                        	
+                        <div class="content">
+                            <div class="main">
+        {% for title in title %} 
+            <h4 style="color: black" class="card-container"><a href="{% url 'client_articles_details' title.id %}" style="color: black">{{title}} <br><br><h5 style="color:white">Category: </h5>{{title.category}}<h5 style="color:white"><br>Price:</h5>{{title.price}}</a></h4> 
+        {% endfor %}
+    </div>
+    {% else %} 
+        <h1> Hey! you Forgot To enter </h1>
+    {% endif %} 
+
+    </center>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'site/adminbase.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style type="text/css">
+
+</style>
+<body>
+
+    <div class="row">
+        
+            <div class="col-sm-4">
+                <center> <h1 style="color:white;"> Add Sports </h1> </center><br>
+                
+                <div class="form-group">
+                <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <center>
+                <button type="Submit" class="btn btn-success">Add</button>
+                </center>
+                </form>
+                </div>
+            </div>
+        
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

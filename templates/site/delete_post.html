@@ -1,0 +1,17 @@
+{% extends 'site/photobase.html' %}
+{% block title %}Delete Blog Post {% endblock %}
+{% block content %}
+<h1>Delete Blog Post</h1>
+<br/><br/>
+ <h3>Delete:{{post.title}}</h3>
+<br/>
+<div class="form-group">
+  <form method="POST">
+    {% csrf_token %}
+        <strong> Are you sure ?</strong><br/><br/>
+
+    <button type="submit" class="btn btn-secondary">Delete Post</button>
+    <a href="{% url 'article-detail' post.pk %} " class="btn btn-primary">back</a>
+  </form>
+</div>
+{% endblock %}

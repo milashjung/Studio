@@ -1,0 +1,107 @@
+{% extends 'site/photobase.html' %}
+{% block title %}Update Blog Post {% endblock %}
+{% block content %}
+<style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background:#053740;
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #053740;
+      color: #fff;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+  </style>
+<h1>Edit Info</h1>
+<br/><br/>
+<div class="form-group">
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.media}}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Edit</button>
+  </form>
+</div>
+{% endblock %}

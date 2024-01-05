@@ -1,0 +1,39 @@
+{% extends 'site/adminbase.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<style type="text/css">
+
+
+</style>
+<body>
+<br>
+    <div class="row">
+        
+            <div class="col-sm-3">
+                <center> <h2 style="color:black;"> Edit Photo Category </h2> </center><br>
+                
+                <div class="form-group">
+                <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <center>
+                <button type="Submit" class="btn btn-success">Update</button>
+                </center>
+                </form>
+                </div>
+            </div>
+        
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

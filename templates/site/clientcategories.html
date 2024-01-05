@@ -1,0 +1,28 @@
+{% extends 'site/clientbase.html' %}
+{% block content %}
+  {% if category_post %}
+      <h2 style="font-family:Monotype Corsiva">Category: {{cats}}</h2>
+      <hr>
+      <ul>
+      {% for post in category_post %}
+          <li>
+            <a href="{% url 'student_articles_details' post.pk%} "> {{ post.title }}</a>
+            - {{ post.author }} -- {{post.post_date}} --
+            {% if user.is_authenticated %}
+            {% endif %}
+            <br/>
+            {{ post.body|slice:":100"|safe }}...
+            <br/><br/>
+            </li>
+
+
+ 
+      {% endfor %}
+    <a href="{% url 'home' %}" class="btn btn-success"> Back </a>
+    </ul>
+    {% else %}
+    <h3 style="color:blue">Sorry this page does not exist</h3>
+  {% endif %}
+
+{% endblock %}
+     

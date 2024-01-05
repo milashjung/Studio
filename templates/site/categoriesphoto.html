@@ -1,0 +1,89 @@
+{% extends 'site/clientbase.html' %}
+{% block content %}
+<style>
+ a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+    </style>
+    <br>
+  {% if category_post %}
+      <h2 style="font-family:Monotype Corsiva">Category: {{cats}} &nbsp Photography</h2>
+      <hr>
+      <ul>
+      {% for post in category_post %}
+          <li>
+           <u><a href="{% url 'client_articles_details' post.pk%} " style="color:red">{{ post.title }}</a></u> 
+            - Photographer Name: {{ post.author }} 
+            {% if user.is_authenticated %}
+            {% endif %}
+            <br/>
+            {{ post.body|slice:":100"|safe }}
+            <br/><br/>
+            </li>
+
+
+ 
+      {% endfor %}
+    {% comment %} <a href="{% url 'home' %}" class="btn btn-success"> Back </a> {% endcomment %}
+    </ul>
+    {% else %}
+    <h3 style="color:blue">Sorry this page does not exist</h3>
+  {% endif %}
+
+{% endblock %}
+     

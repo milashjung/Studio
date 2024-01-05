@@ -1,0 +1,112 @@
+{% extends 'site/photobase.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<center>
+<h1>UPLOADS</h1>
+
+</center>
+
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<html>
+
+<head>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
+     <link rel="stylesheet" href="{% static 'css2/style.css' %}">
+     <script src="{% static 'css2/styles.js' %}"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+<br>
+<body>
+
+  <div class="container">
+    <div class="row">
+     <div class="col-sm-10 col-sm-offset-1">
+{% for post in object_list %}
+<!-- snipp1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9155049400353686"
+     data-ad-slot="4807425052"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+         <div class="col-md-4 col-sm-6">
+             <div class="card-container">
+                <div class="card "> <!--bg-dark text-white-->
+                    <div class="front">
+                   
+                       
+                        	
+                        <div class="content">
+                            <div class="main">
+                            <p style="color:white">Click below</p>
+                                <h3 class="name"><a  style="font-family: 'Verdana';color:white;" href="{% url 'article-detail' post.pk %} "> {{ post.title }}</a></h3><br><a href="{% url 'update-post' post.pk %}"><br><button style="background-color:green;color:white">Edit</button></a><a href="{% url 'delete-post' post.pk %}">&nbsp &nbsp<button style="background-color:red;color:white">Delete</button></a></p></p>
+                                
+                                {% comment %} <p class="text-center" style="color:#8c0073">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p> {% endcomment %}
+                               <br/> <div class="card-footer text-center">
+                                <h4 style="color:white">       Photographer Name:   {{ post.author }}</h4><br/>
+                                
+                                </div>
+                            
+                            </div><br/><br/>
+                            
+                            
+                            
+                            <!--<div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>-->
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                         <div class="user">
+                         
+                        </div>
+                        
+                            <br>
+                            <div class="profile-hire-block">
+                               <div class="card-footer text-center">
+                  </div></div>
+                        </div>
+                        
+                        
+                            
+                            
+           
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+            <br/><br/>
+        </div> <!-- end col sm 3 -->
+{% endfor %}
+</center>
+{% else %}
+
+{% endif %}
+
+<br/>
+       </div>
+     </div>
+       
+  </div>          
+<!--         <div class="col-sm-1"></div> -->
+
+
+
+
+
+
+
+
+</body>
+</html>
+{% endblock  %}

@@ -1,0 +1,65 @@
+{% extends 'site/adminbase.html' %}
+
+{% block content %}
+<html>
+<head> </head>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style type="text/css">
+
+.card{
+        width:100%;
+        height:auto;
+        border-radius: 0px;
+        box-shadow: 0 0 10px;
+        background: rgba(255, 255, 255, .6);
+}
+
+.btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+</style>
+<body>
+
+    <center> <h1 style="color:black;"> Photographer Category </h1> </center> <br>
+    <span>
+    <center>
+        {% for photo in object_list %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <div class="card" style="color:black;">
+                            <center> <h3>{{photo.title}}</h3></center> {{photo.body|safe}} <p> {{photo.description}} </p>
+                            
+                            <a button href="{% url 'edit_photo' photo.id %}"  class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"> Edit </span> </a></button>  
+                            <a button href="{% url 'delete_photo' photo.id %}" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"> Delete </span> </a></button>  
+                        </div>
+                    </div>
+                </div> 
+            </div><br><br>
+        {% endfor %}
+      
+      <a button href="/photo_category" class="btnSubmit">Add Package</a></button>  </center>
+    </span>
+
+</body>
+</html>
+    
+        
+{% endblock content %}

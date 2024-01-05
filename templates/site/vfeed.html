@@ -1,0 +1,73 @@
+
+{%extends 'site/photobase.html' %}
+{% block content %}
+<html>
+<head> </head>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style type="text/css">
+
+.card{
+        width:50%;
+        height:auto;
+        border-radius: 0px;
+        box-shadow: 0 0 10px;
+        background: rgba(255, 255, 255, .6);
+}
+
+.btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+</style>
+<body>
+
+    <center> <h1 style="color:black;"> Feedback</h1> </center> <br>
+    <span>
+    <center>
+        {% for feed in object_list %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <div class="" >
+                        <table border=1>
+                        <tr>
+                        <th>Email</th>
+                        <td>{{feed.email|safe}}</td>
+                        </tr>
+                        <tr>
+                        <th>Message</th>
+                        <td>{{feed.message|safe}}</td>
+                           </tr>
+                           </table>
+
+                            
+                                                   </div>
+                    </div>
+                </div> 
+            </div><br><br>
+        {% endfor %}
+      
+      {% comment %} <a button href="/sports_category" class="btnSubmit">Add Sports</a></button>  </center> {% endcomment %}
+    </span>
+
+</body>
+</html>
+    
+        
+{% endblock content %}

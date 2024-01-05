@@ -1,0 +1,181 @@
+{% extends 'site/clientbase.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<br><br>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+  <style type="text/css">
+    a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: #053740;
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #053740;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-content">
+    <div class="container register-form">
+      <div class="form" >
+        <h1 style="text-align:center">Payment</h1>
+        <br>
+        <hr>
+          
+        </div>
+        <h2 style="text-align:center"><img class="img" src="static/images/Googlepay.png" width="px" height="50px" />Google Pay | <img class="img" src="static/images//P.png" width="50px" height="50px" />Phonepay |<img class="img" src="static/images/B.png" width="80px" height="50px" /> Bharath Pay</h2>
+<h5 style="text-align:center">Scan The Below QR To Pay</h5>
+<div class="form-group" align="center">
+
+<img class="img" src="static/images/33.jpg" width="200px" height="200px" />
+</div>
+        <div class="row">
+            <div class="col-md-12">
+            <label>Photographer Name:</label>
+              <div class="form-group">
+                {% render_field PaymentForm.Photographer class="form-control" placeholder="" %}
+              </div>
+              
+         
+         
+          {% comment %} <div class="text-center">Already have an account? <a href="Drivinglogin">Login here</a></div> {% endcomment %}
+        
+      </div>
+    </div>
+        
+          
+     <div class="row">
+            <div class="col-md-12">
+            <label>Your Name:</label>
+              <div class="form-group">
+                {% render_field PaymentForm.CName class="form-control" placeholder="your registered name" %}
+              </div>
+              
+         
+         
+          {% comment %} <div class="text-center">Already have an account? <a href="Drivinglogin">Login here</a></div> {% endcomment %}
+        
+      </div>
+    </div>
+    <div class="row">
+            <div class="col-md-12">
+            <label>Category:</label>
+              <div class="form-group">
+                {% render_field PaymentForm.category class="form-control" placeholder="your category" %}
+              </div>
+              
+         
+         
+          {% comment %} <div class="text-center">Already have an account? <a href="Drivinglogin">Login here</a></div> {% endcomment %}
+        
+      </div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                {% render_field PaymentForm.amount class="form-control" placeholder="Enter The Amount Your Going To Pay" %}
+              </div>
+              
+         
+         
+                 
+      </div>
+    </div>
+<center> <center><button type="submit" class="btnSubmit">PAY</button></center></center>
+  </form>
+
+<br><br><br><br><br><br><br>
+{% endblock content %}

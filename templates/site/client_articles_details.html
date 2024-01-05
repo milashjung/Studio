@@ -1,0 +1,112 @@
+{% extends 'site/clientbase.html' %}
+{% block title %}
+{{ post.title }}
+{% endblock %}
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    
+    <style media="screen">
+      .btn-grad1 {
+        background-color: #00b712;
+      background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);}
+      .btn-grad {
+          background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
+      
+          .btn-grad {
+         margin: 10px;
+         width: 70px;
+      padding: 10px 10px;
+         text-align: center;
+         text-transform: uppercase;
+         transition: 0.5s;
+         background-size: 200% auto;
+         color: white;            
+         box-shadow: 0 0 20px #eee;
+         border-radius: 5px;
+       }
+
+a:link {
+      text-decoration: none;
+    }
+
+    .menu {
+      top: 50px;
+    }
+
+    h6 {
+      color: white;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: #053740;
+    }
+
+    .bg-c-green {
+      background: #053740;
+    }
+
+    .bg-c-yellow {
+      background: #053740;
+    }
+
+    .bg-c-pink {
+      background: #053740;
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+    
+
+ 
+
+       
+    </style>
+    </head>
+    <center>
+    <div style="color: black;">
+{% if user.is_authenticated %}
+<h1>{{ post.title }}</h1>
+<small> Photographer Name:{{post.author }}
+<hr>
+<br/>
+{{ post.Image|slice:":100"|safe }}
+<br/><br/>
+{% comment %} <a class="btn-grad btn-grad hover " href="{% url 'home' %} " class="btn btn-primary">back</a> {% endcomment %}
+{% else %}
+    <h2 style="color:blue;">
+        You are Not authorized to view details. kindly Login
+    </h2></div>
+{% endif %}
+{% endblock %}
+</center>
